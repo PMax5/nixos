@@ -3,4 +3,3 @@ result
 .env
 *.swp
 .DS_Store
-hardware-configuration.nix
