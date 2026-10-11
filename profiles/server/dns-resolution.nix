@@ -9,5 +9,5 @@ let
   }) domainConfig.records;
 in
 {
-  services.adguardhome.settings.dns.rewrites = rewrites;
+  services.adguardhome.settings.filtering.rewrites = rewrites;
 }
