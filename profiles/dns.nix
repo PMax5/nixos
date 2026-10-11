@@ -29,6 +29,18 @@
           name = "HaGeZi's Threat Intelligence Feeds";
           id = 1780862687;
         }
+        {
+          enabled = true;
+          url = "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.txt";
+          name = "HaGeZi Multi PRO";
+          id = 1780862688;
+        }
+        {
+          enabled = true;
+          url = "https://adguardteam.github.io/HostlistsRegistry/assets/filter_3.txt";
+          name = "AdGuard Tracking Protection";
+          id = 1780862689;
+        }
       ];
 
       dns = {
