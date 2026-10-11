@@ -25,7 +25,7 @@
       profiles = generators.mkProfiles ./profiles;
 
       generators = import ./lib/generators.nix {
-        inherit nixpkgs inputs profiles;
+        inherit nixpkgs inputs;
       };
     in
     {
