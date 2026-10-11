@@ -1,7 +1,7 @@
-{ config, ... }:
+{ config, hostSecretsDir, ... }:
 
 let
-  domainConfig = import ./domains.nix;
+  domainConfig = import ./dns-records.nix;
 
   cloudflareCert = {
     group = "nginx";
@@ -11,7 +11,7 @@ let
   };
 in
 {
-  age.secrets.cloudflareToken.file = secrets."cloudflare/pedromax.pt.age".file;
+  age.secrets.cloudflareToken.file = "${hostSecretsDir}/cloudflare/pedromax.pt.age";
   
   security.acme = {
     acceptTerms = true;

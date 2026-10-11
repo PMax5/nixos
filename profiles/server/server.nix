@@ -1,6 +1,13 @@
-{ pkgs, ... }: 
+{ pkgs, ... }:
 
 {
+  imports = [
+    ./acme.nix
+    ./dns-resolution.nix
+    ./nginx.nix
+    ../dns.nix
+  ];
+
   environment.systemPackages = with pkgs; [
     btop
     htop

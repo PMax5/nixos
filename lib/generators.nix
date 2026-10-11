@@ -1,4 +1,4 @@
-{ nixpkgs, inputs }:
+{ nixpkgs, inputs, hostSecretsDir }:
 
 let
   lib = nixpkgs.lib;
@@ -38,7 +38,7 @@ let
       inherit system;
 
       specialArgs = {
-        inherit inputs profiles hostname;
+        inherit inputs profiles hostname hostSecretsDir;
       } // specialArgs;
 
       modules = [
@@ -51,6 +51,7 @@ let
     hostsDir,
     profiles,
     system ? "x86_64-linux",
+    extraModules ? [],
   }:
     let
       entries = builtins.readDir hostsDir;
@@ -61,10 +62,19 @@ let
     lib.genAttrs hostNames (hostname:
       mkHost {
         hostPath = hostsDir + "/${hostname}";
-        inherit profiles system;
+        inherit profiles system extraModules;
       }
     );
+
+  mkSecrets = secretsDir:
+    builtins.listToAttrs (builtins.map (file: let
+        name = lib.removePrefix (toString secretsDir + "/") (toString file);
+      in {
+        inherit name;
+        value = {inherit file;};
+      })
+      (builtins.filter (p: lib.hasSuffix ".age" p) (lib.filesystem.listFilesRecursive secretsDir)));
 in
 {
-  inherit mkProfiles mkHost mkHosts;
+  inherit mkProfiles mkHost mkHosts mkSecrets;
 }
