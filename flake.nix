@@ -22,14 +22,17 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
 
-      profiles = import ./profiles;
+      profiles = generators.mkProfiles ./profiles;
 
       generators = import ./lib/generators.nix {
         inherit nixpkgs inputs profiles;
       };
     in
     {
-      nixosConfigurations = generators.mkHosts ./hosts;
+      nixosConfigurations = generators.mkHosts {
+        hostsDir = ./hosts;
+        inherit profiles;
+      };
 
       devShells.${system}.default = pkgs.mkShell {
         packages = [
