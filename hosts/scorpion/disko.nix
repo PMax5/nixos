@@ -31,18 +31,9 @@ in
           size = "100%";
 
           content = {
-            type = "luks";
-            name = "cryptroot";
-
-            settings = {
-              allowDiscards = false;
-            };
-
-            content = {
-              type = "filesystem";
-              format = "ext4";
-              mountpoint = "/";
-            };
+            type = "filesystem";
+            format = "ext4";
+            mountpoint = "/";
           };
         };
       };
