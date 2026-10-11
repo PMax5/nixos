@@ -6,6 +6,7 @@ let
   rewrites = map (record: {
     domain = record.domain;
     answer = record.address or domainConfig.serverAddress;
+    enabled = true;
   }) domainConfig.records;
 in
 {
