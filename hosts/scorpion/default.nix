@@ -6,7 +6,7 @@
     profiles.server.server
     profiles.sshd
     inputs.disko.nixosModules.disko
-    ./disk-config.nix
+    ./disko.nix
   ];
 
   networking = {

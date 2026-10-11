@@ -22,10 +22,10 @@ A modular, declarative NixOS configuration repository for managing multiple host
 └── hosts/
     ├── host-a/
     │   ├── default.nix
-    │   └── disk-config.nix
+    │   └── disko.nix
     └── host-b/
         ├── default.nix
-        └── disk-config.nix
+        └── disko.nix
 ```
 
 ## Usage
