@@ -5,6 +5,7 @@
     ./acme.nix
     ./dns-resolution.nix
     ./nginx.nix
+    ./stirling-pdf.nix
     ./tailscale.nix
     ../dns.nix
   ];

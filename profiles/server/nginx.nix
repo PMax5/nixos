@@ -14,6 +14,13 @@
 
       locations."/".proxyPass = "http://127.0.0.1:3000";
     };
+
+    virtualHosts."pdf.pedromax.pt" = {
+      forceSSL = true;
+      useACMEHost = "pdf.pedromax.pt";
+
+      locations."/".proxyPass = "http://127.0.0.1:3005";
+    };
   };
 
   networking.firewall.allowedTCPPorts = [ 80 443 ];
