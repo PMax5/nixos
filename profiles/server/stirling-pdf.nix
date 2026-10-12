@@ -8,6 +8,7 @@
     environment = {
       DISABLE_ADDITIONAL_FEATURES = "false";
       SECURITY_ENABLELOGIN = "false";
+      JAVA_TOOL_OPTIONS = "-XX:-UseCompactObjectHeaders -XX:MaxRAMPercentage=50.0 -XX:+UseG1GC";
     };
   };
 }
