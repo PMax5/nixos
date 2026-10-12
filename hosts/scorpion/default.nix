@@ -14,6 +14,12 @@
     useDHCP = true;
   };
 
+  zramSwap = {
+    enable = true;
+    memoryPercent = 50; 
+    algorithm = "zstd";
+  };
+
   system.stateVersion = "26.05";
 
   # Set the private key path for Agenix system decryption
