@@ -7,6 +7,7 @@
     ./nginx.nix
     ./stirling-pdf.nix
     ./tailscale.nix
+    ./wealthfolio.nix
     ../dns.nix
   ];
 

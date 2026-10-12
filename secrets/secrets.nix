@@ -11,4 +11,14 @@ in
     hosts.scorpion
     users.pmax_raptor
   ];
+
+  "wealthfolio/secret-key.age".publicKeys = [
+    hosts.scorpion
+    users.pmax_raptor
+  ];
+
+  "wealthfolio/auth-password-hash.age".publicKeys = [
+    hosts.scorpion
+    users.pmax_raptor
+  ];
 }
