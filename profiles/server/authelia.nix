@@ -26,6 +26,22 @@ in
       file = "${hostSecretsDir}/authelia/users.yml.age";
       owner = "authelia-main";
     };
+
+    authelia-oidc-hmac-secret = {
+      file = "${hostSecretsDir}/authelia/oidc-hmac-secret.age";
+      owner = "authelia-main";
+    };
+
+    authelia-oidc-rsa-private-key = {
+      file = "${hostSecretsDir}/authelia/oidc-rsa-private.pem.age";
+      owner = "authelia-main";
+    };
+
+    authelia-oidc-clients = {
+      file = "${hostSecretsDir}/authelia/oidc-clients.yaml.age";
+      owner = "authelia-main";
+      mode = "0400";
+    };
   };
 
   services.authelia = {
@@ -41,7 +57,17 @@ in
 
         storageEncryptionKeyFile =
           config.age.secrets.authelia-storage-encryption-key.path;
+
+        oidcHmacSecretFile =
+          config.age.secrets.authelia-oidc-hmac-secret.path;
+
+        oidcIssuerPrivateKeyFile =
+          config.age.secrets.authelia-oidc-rsa-private-key.path;
       };
+
+      settingsFiles = [
+        config.age.secrets.authelia-oidc-clients.path
+      ];
 
       settings = {
         theme = "auto";

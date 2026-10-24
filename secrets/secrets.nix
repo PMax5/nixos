@@ -41,4 +41,24 @@ in
     hosts.scorpion
     users.pmax_raptor
   ];
+
+  "authelia/oidc-clients.yaml.age".publicKeys = [
+    hosts.scorpion
+    users.pmax_raptor
+  ];
+
+  "authelia/oidc-hmac-secret.age".publicKeys = [
+    hosts.scorpion
+    users.pmax_raptor
+  ];
+
+  "authelia/oidc-rsa-private.pem.age".publicKeys = [
+    hosts.scorpion
+    users.pmax_raptor
+  ];
+
+  "stirling-pdf/secrets.env.age".publicKeys = [
+    hosts.scorpion
+    users.pmax_raptor
+  ];
 }
