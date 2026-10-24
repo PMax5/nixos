@@ -3,6 +3,7 @@
 {
   imports = [
     ./acme.nix
+    ./authelia.nix
     ./dns-resolution.nix
     ./nginx.nix
     ./stirling-pdf.nix

@@ -6,6 +6,7 @@
     { domain = "dns.pedromax.pt"; }
     { domain = "pdf.pedromax.pt"; }
     { domain = "assets.pedromax.pt"; }
+    { domain = "auth.pedromax.pt"; }
 
     # Hosted on another machine (None yet)
   ];

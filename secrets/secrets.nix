@@ -21,4 +21,24 @@ in
     hosts.scorpion
     users.pmax_raptor
   ];
+
+  "authelia/jwt-secret.age".publicKeys = [
+    hosts.scorpion
+    users.pmax_raptor
+  ];
+
+  "authelia/session-secret.age".publicKeys = [
+    hosts.scorpion
+    users.pmax_raptor
+  ];
+
+  "authelia/storage-encryption-key.age".publicKeys = [
+    hosts.scorpion
+    users.pmax_raptor
+  ];
+
+  "authelia/users.yml.age".publicKeys = [
+    hosts.scorpion
+    users.pmax_raptor
+  ];
 }
