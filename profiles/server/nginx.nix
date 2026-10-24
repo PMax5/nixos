@@ -15,7 +15,32 @@ in
       forceSSL = true;
       useACMEHost = "dns.${domain}";
 
-      locations."/".proxyPass = "http://127.0.0.1:3000";
+      
+      locations."= /authelia" = {
+        extraConfig = ''
+          internal;
+          proxy_pass http://127.0.0.1:9091/api/authz/auth-request;
+
+          proxy_set_header X-Original-Method $request_method;
+          proxy_set_header X-Original-URL $scheme://$http_host$request_uri;
+          proxy_set_header X-Forwarded-For $remote_addr;
+          proxy_set_header X-Forwarded-Proto $scheme;
+          proxy_set_header X-Forwarded-Host $http_host;
+          proxy_set_header X-Forwarded-URI $request_uri;
+
+          proxy_set_header Content-Length "";
+          proxy_set_header Connection "";
+          proxy_pass_request_body off;
+        '';
+      };
+
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:3000";
+        extraConfig = ''
+          auth_request /authelia;
+          error_page 401 =302 https://auth.pedromax.pt/?rd=$scheme://$http_host$request_uri;
+        '';
+      };
     };
 
     virtualHosts."pdf.${domain}" = {
