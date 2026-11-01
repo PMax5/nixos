@@ -6,6 +6,7 @@
     ./authelia.nix
     ./dns-resolution.nix
     ./nginx.nix
+    ./postgresql.nix
     ./stirling-pdf.nix
     ./tailscale.nix
     ./wealthfolio.nix
