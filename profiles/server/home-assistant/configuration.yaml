@@ -1,0 +1,3 @@
+recorder:
+  db_url: !env_var RECORDER_DB_URL
+  purge_keep_days: 30

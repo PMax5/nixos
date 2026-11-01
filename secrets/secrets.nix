@@ -61,4 +61,9 @@ in
     hosts.scorpion
     users.pmax_raptor
   ];
+
+  "homeassistant/secrets.env.age".publicKeys = [
+    hosts.scorpion
+    users.pmax_raptor
+  ];
 }

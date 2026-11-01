@@ -5,6 +5,7 @@
     ./acme.nix
     ./authelia.nix
     ./dns-resolution.nix
+    ./home-assistant
     ./nginx.nix
     ./postgresql.nix
     ./stirling-pdf.nix

@@ -63,6 +63,16 @@ in
 
       locations."/".proxyPass = "http://127.0.0.1:9091";
     };
+
+    virtualHosts."cerebrus.${domain}" = {
+      forceSSL =  true;
+      useACMEHost = "cerebrus.${domain}";
+
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:8123";
+        proxyWebsockets = true;
+      };
+    };
   };
 
   networking.firewall.allowedTCPPorts = [ 80 443 ];
