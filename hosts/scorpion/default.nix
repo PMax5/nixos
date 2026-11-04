@@ -10,6 +10,7 @@
   ];
 
   networking = {
+    hostName = "scorpion";
     hostId = "8425e349";
     useDHCP = true;
   };
