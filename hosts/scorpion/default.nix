@@ -27,4 +27,15 @@
   age.identityPaths = [
     "/etc/ssh/ssh_host_ed25519_key"
   ];
+
+  # Services
+  services.tailscale = {
+    useRoutingFeatures = "server";
+
+    extraUpFlags = [
+      "--advertise-routes=192.168.1.0/24"
+    ];
+  };
+
+  networking.firewall.checkReversePath = "loose";
 }
