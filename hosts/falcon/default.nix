@@ -3,7 +3,6 @@
 {
   imports = [
     profiles.base
-    profiles.server.server
     profiles.sshd
     profiles.dnsmasq
     inputs.disko.nixosModules.disko
