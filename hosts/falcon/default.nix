@@ -32,13 +32,13 @@
   # Services
   services.tailscale = {
     extraUpFlags = [
-      "--accept-routes"
+      "--accept-dns=false"
     ];
   };
 
   services.dnsmasq.settings.listen-address = [
     "127.0.0.1"
-    "192.168.1.105"
+    "100.79.87.19"
   ];
 
   boot.kernel.sysctl = {
