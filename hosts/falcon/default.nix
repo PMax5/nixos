@@ -40,4 +40,9 @@
     "127.0.0.1"
     "192.168.1.105"
   ];
+
+  boot.kernel.sysctl = {
+    "net.ipv4.ip_forward" = 1;
+    "net.ipv6.conf.all.forwarding" = 1;
+  };
 }
