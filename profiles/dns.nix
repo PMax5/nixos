@@ -59,6 +59,19 @@
           "1.0.0.1"
         ];
       };
+
+      clients = {
+        persistent = [
+          {
+            name = "Tailscale Network";
+            ids = [
+              "100.64.0.0/10"   # Covers all Tailscale clients (or specify Falcon's exact IP: "100.x.x.x")
+            ];
+            use_global_settings = true;
+            filtering_enabled = true;
+          }
+        ];
+      };
     };
   };
 
