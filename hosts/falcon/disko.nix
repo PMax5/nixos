@@ -4,7 +4,7 @@ let
   disk = "/dev/disk/by-id/nvme-INTEL_SSDPEKKF256G7L_BTPY8106054G256D";
 in
 {
-  disko.devices.disk.scorpion = {
+  disko.devices.disk.falcon = {
     type = "disk";
     device = disk;
 
