@@ -76,4 +76,15 @@
 
   # Convenience setting; consider requiring a password instead.
   security.sudo.wheelNeedsPassword = false;
+
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 53 ];
+    allowedUDPPorts = [ 53 ];
+  };
+
+  services = {
+    fstrim.enable = true;
+    smartd.enable = true;
+  };
 }

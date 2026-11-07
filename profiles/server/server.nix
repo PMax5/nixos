@@ -21,11 +21,4 @@
     smartmontools
     usbutils
   ];
-
-  networking.firewall.enable = true;
-
-  services = {
-    fstrim.enable = true;
-    smartd.enable = true;
-  };
 }
