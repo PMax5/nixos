@@ -1,7 +1,7 @@
 { ... }:
 
 let
-  disk = "/dev/disk/by-id/nvme-INTEL_SSDPEKKF256G7L_BTPY81060549256D";
+  disk = "/dev/disk/by-id/nvme-INTEL_SSDPEKKF256G7L_BTPY8106054G256D";
 in
 {
   disko.devices.disk.scorpion = {
