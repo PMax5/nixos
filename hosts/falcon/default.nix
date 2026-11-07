@@ -5,6 +5,7 @@
     profiles.base
     profiles.sshd
     profiles.dnsmasq
+    profiles.server.tailscale
     inputs.disko.nixosModules.disko
     ./disko.nix
   ];
