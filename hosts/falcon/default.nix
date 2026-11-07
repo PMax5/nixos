@@ -38,6 +38,6 @@
 
   services.dnsmasq.settings.listen-address = [
     "127.0.0.1"
-    "192.168.1.75"
+    "192.168.1.105"
   ];
 }
