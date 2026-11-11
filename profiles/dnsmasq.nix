@@ -11,7 +11,7 @@
       bind-interfaces = true;
 
       server = [
-        "scorpion"
+        "100.87.13.6"
       ];
 
       no-resolv = true;
