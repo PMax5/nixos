@@ -39,6 +39,7 @@
   services.dnsmasq.settings.listen-address = [
     "127.0.0.1"
     "100.79.87.19"
+    "192.168.0.102"
   ];
 
   boot.kernel.sysctl = {
